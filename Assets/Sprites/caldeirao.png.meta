@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: e71ab39fdb2bde045982adcd46c73e83
+guid: d284f490fb211e04eb72959d8a893d94
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3859809142442373741
-    second: caldeirao 1_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -116,28 +113,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: caldeirao 1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39dcaebf8043f6ac0800000000000000
-      internalID: -3859809142442373741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
