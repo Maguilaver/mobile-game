@@ -5,11 +5,11 @@ using UnityEngine;
 public class MovCaldeirao : MonoBehaviour
 {
     
-    Rigidbody2D rbCaldeirao;
-    float dirX;
+    private Rigidbody2D rbCaldeirao;
+    private float dirX;
 
     [SerializeField]
-    public float velocidade;
+    private float velocidade;
    
 
 
@@ -23,7 +23,7 @@ public class MovCaldeirao : MonoBehaviour
     void Update()
     {
         dirX = Input.acceleration.x * velocidade;
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7.5f, 7.5f), transform.position.y);
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, -1.5f, 1.5f), transform.position.y); //criar limites para a bola
         
     }
 
