@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MovCaldeirao : MonoBehaviour
 {
-    
+    //Movimentação
     private Rigidbody2D rbCaldeirao;
     private float dirX;
 
     [SerializeField]
     private float velocidade;
-   
+
+   //pontos 
 
 
     // Start is called before the first frame update
@@ -31,4 +32,9 @@ public class MovCaldeirao : MonoBehaviour
     {
         rbCaldeirao.velocity = new Vector2(dirX, 0f);
     }
+
+
+
+
+
 }

@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class SpawnDeObjetos : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject Objeto;
 
+    //objetos possiveis
+    public List<GameObject> Objetos = new List<GameObject>();
+    private int objetoEscolhido;
+    
     [SerializeField]
     private bool pararSpawn = false;
 
@@ -24,7 +28,8 @@ public class SpawnDeObjetos : MonoBehaviour
 
     public void CriarObjetos()
     {
-        Instantiate(Objeto, transform.position, transform.rotation); //clona objetos e retorna o clone dele 
+        objetoEscolhido = Random.Range(0, Objetos.Count);
+        Instantiate(Objetos[objetoEscolhido], transform.position, transform.rotation); //clona objetos e retorna o clone dele 
                                                                      //objeto que será criado, posição e rotação 
         if(pararSpawn)
         {
