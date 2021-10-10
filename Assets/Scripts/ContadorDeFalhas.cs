@@ -5,7 +5,7 @@ using UnityEngine;
 public class ContadorDeFalhas : MonoBehaviour
 {
     [SerializeField]
-    private int falhas = 0; 
+    private int falhas;
 
     //Pensar no slow update
 
@@ -24,7 +24,8 @@ public class ContadorDeFalhas : MonoBehaviour
     {
         if(collision.gameObject.tag == "ingredientes")
         {
-            falhas++;
+            Controlador.acesso.totalFalhas = falhas++ + 1;
+            Controlador.acesso.AtualizarFalhas();
 
             Destroy(GameObject.FindWithTag("ingredientes"));
         }

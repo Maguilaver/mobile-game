@@ -7,28 +7,36 @@ using UnityEngine.UI;
 public class Controlador : MonoBehaviour
 {
 
-    //Atualizar pontos
+    //Atualizar pontuação
+    public Text textoPontos;
 
-    [SerializeField]
-    private Text textoPontos;
+    public int totalPontos;
 
-    [SerializeField]
-    private int contPontos;
+    public static Controlador acesso; // acessar essa clase por outro script
 
+    //Atualizar Fahas
 
+    public Text textoFalhas;
+
+    public int totalFalhas;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        contPontos = 8;
-        textoPontos.text += contPontos;
 
+        acesso = this; // criar uma variavel estatica e atribuir o valor dela ao proprio script
+                       // assim, quando eu chamar essa variavel de outro script consigo acessar tudo dele que não seja private
+      
     }
 
-    // Update is called once per frame
-    void Update()
+   public void AtualizarPontos()
     {
+        textoPontos.text = totalPontos.ToString().PadLeft(4,'0'); //pegamos o texto do componente e depois convertemos o valor total (que é int) para string
+    }                                             // assim, igualamos o texto da UI com a variavel dos pontos totais
 
+    public void AtualizarFalhas()
+    {
+        textoFalhas.text = totalFalhas.ToString() + "/9";
     }
 }
