@@ -11,7 +11,6 @@ public class MovCaldeirao : MonoBehaviour
     [SerializeField]
     private float velocidade;
 
-   //pontos 
 
 
     // Start is called before the first frame update
@@ -33,7 +32,15 @@ public class MovCaldeirao : MonoBehaviour
         rbCaldeirao.velocity = new Vector2(dirX, 0f);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Animais")
+        {
 
+        }
+    }
+
+    
 
 
 

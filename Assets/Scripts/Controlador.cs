@@ -39,4 +39,17 @@ public class Controlador : MonoBehaviour
     {
         textoFalhas.text = totalFalhas.ToString() + "/9";
     }
+
+
+    public void Pausar()
+    {
+        Time.timeScale = 0f; //"congela" o tempo do jogo
+    }
+
+    public void Retomar()
+    {
+        Time.timeScale = 1f;
+    }
+
+
 }

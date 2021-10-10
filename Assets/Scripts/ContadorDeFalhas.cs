@@ -29,5 +29,12 @@ public class ContadorDeFalhas : MonoBehaviour
 
             Destroy(GameObject.FindWithTag("ingredientes"));
         }
+
+
+        if (collision.gameObject.tag == "Animais")
+        {
+            Destroy(GameObject.FindWithTag("Animais"));
+        }
     }
+
 }
