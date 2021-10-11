@@ -5,57 +5,54 @@ using UnityEngine.UI;
 
 public class ControladorLoja : MonoBehaviour
 {
-    public Text[] botao_txt;
-    public Image[] itens_image;
-    public int[] valor;
+    public Text[] textobotao;
+    public int[] preço;
     private int moedinhas;
+
     void Start()
     {
-        if(PlayerPrefs.GetInt("3") == 0)
+        //if(PlayerPrefs.GetInt("0") == 0)
         {
-            PlayerPrefs.SetInt("0", 1);
+            //PlayerPrefs.SetInt("0", 1);
         }
-        moedinhas = PlayerPrefs.GetInt("moedasTotal");
-        
+        moedinhas = PlayerPrefs.GetInt("totalScore");
     }
-
     void Update()
     {
-        for(int i=0;i<itens_image.Length;i++)
+        for(int i = 0; i < textobotao.Length; i++)
         {
             if(PlayerPrefs.GetInt(i.ToString()) == 0)
             {
-                botao_txt[i].text = valor[i].ToString();
+                textobotao[i].text = preço[i].ToString();
             }
             else
             {
-                botao_txt[i].text = "selecionar";
-                itens_image[i].gameObject.SetActive(true);
+                textobotao[i].text = "Selecionar";
             }
         }
+        
     }
 
-    public void Compraritem(int numeroBotao)
+    public void ComprarItem(int numeroBotao)
     {
-        //playerprefs = 0 significa que o item esta bloqueado
-        if(PlayerPrefs.GetInt(numeroBotao.ToString()) == 0)
+        //caso PlayerPref = 0 então item esta bloqueado
+        if (PlayerPrefs.GetInt(numeroBotao.ToString()) == 0)
         {
-            //comprar item e desbloquear
-            if(moedinhas >= valor[numeroBotao])
+            //codigo para comprar item e desbloquear
+            if(moedinhas >= preço[numeroBotao])
             {
                 PlayerPrefs.SetInt(numeroBotao.ToString(), 1);
                 PlayerPrefs.Save();
-                moedinhas = moedinhas - valor[numeroBotao];
 
-                //salvar a nova quantidade de moedas no Total
-                PlayerPrefs.SetInt("moedasTotal", moedinhas);
+                moedinhas = moedinhas - preço[numeroBotao];
+                PlayerPrefs.SetInt("totalScore", moedinhas);
                 PlayerPrefs.Save();
             }
         }
         else
         {
-            //adicionar ingredientes no jogo
-           
+            print("desbloqueado");
+            //"seleciona o personagem"
         }
     }
 }
