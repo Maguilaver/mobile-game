@@ -29,9 +29,11 @@ public class Controlador : MonoBehaviour
 
     public GameObject painelPerder;
 
-    // Texto Pontuação final
+    // Texto Pontuação final e moedas finais
 
     public Text pontosFinais;
+
+    public Text moedasFinais;
 
     //Botão pause
 
@@ -81,10 +83,15 @@ public class Controlador : MonoBehaviour
         //mostrar pontuação na tela de perder
         pontosFinais.text = "Pontuação  " + totalPontos.ToString();
 
+        //mostrar moedas na tela de perder
+        moedasFinais.text = "Moedas obtidas " + totalMoedas.ToString();
+
         //desativar interfaces 
         textoPontos.gameObject.SetActive(false);
         textoFalhas.gameObject.SetActive(false);
         botaoPause.SetActive(false);
+        textoMoedas.gameObject.SetActive(false);
+
     }
 
     public void TentarNovamente()
