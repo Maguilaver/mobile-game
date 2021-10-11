@@ -8,11 +8,13 @@ using UnityEngine.SceneManagement;
 public class Controlador : MonoBehaviour
 {
     //Atualizar moedas durante o jogo
-    public Text textoMoedas;
+    public Text textoMoedas; //texto moedas obtidas durante o jogo
 
     public int Moedas;
 
     public int TotalMoedas;
+
+    public Text textoMoedasTotais;
 
     //Atualizar pontuação durante o jogo
     public Text textoPontos;
@@ -44,6 +46,8 @@ public class Controlador : MonoBehaviour
     //Salvar o jogo
 
     public bool save;
+
+    //
 
      
     // Start is called before the first frame update
@@ -106,9 +110,15 @@ public class Controlador : MonoBehaviour
         TotalMoedas = PlayerPrefs.GetInt("totalScore");
         //usamos GetInt no PlayerPref para pegar valores salvos
 
+        //Moedas totais presentes com o player
         TotalMoedas = TotalMoedas + Moedas;
-        moedasFinais.text = "Moedas obtidas " + TotalMoedas.ToString();
-        salvarMoedas();
+
+        textoMoedasTotais.text = "Moedas finais " + TotalMoedas.ToString();
+
+        moedasFinais.text = "Moedas obtidas " + Moedas.ToString();
+        
+
+        salvarMoedas(); //salvar
 
         //desativar interfaces 
         textoPontos.gameObject.SetActive(false);

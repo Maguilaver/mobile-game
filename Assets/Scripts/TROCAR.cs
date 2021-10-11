@@ -18,7 +18,7 @@ public class TROCAR : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+      //  DontDestroyOnLoad(gameObject);
     }
 
     public void Carregar()
