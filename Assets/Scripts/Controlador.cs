@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class Controlador : MonoBehaviour
 {
+    //Atualizar moedas durante o jogo
+    public Text textoMoedas;
+
+    public int totalMoedas;
 
     //Atualizar pontuação durante o jogo
     public Text textoPontos;
@@ -15,7 +19,7 @@ public class Controlador : MonoBehaviour
 
     public static Controlador acesso; // acessar essa clase por outro script
 
-    //Atualizar Fahas
+    //Atualizar Falhas
 
     public Text textoFalhas;
 
@@ -43,6 +47,10 @@ public class Controlador : MonoBehaviour
       
     }
 
+    public void AtualizarMoedas()
+    {
+        textoMoedas.text = totalMoedas.ToString();
+    }
    public void AtualizarPontos()
     {
         textoPontos.text = totalPontos.ToString().PadLeft(4,'0'); //pegamos o texto do componente e depois convertemos o valor total (que é int) para string
