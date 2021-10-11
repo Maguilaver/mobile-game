@@ -38,6 +38,14 @@ public class MovCaldeirao : MonoBehaviour
         {
             Controlador.acesso.Perder();
         }
+
+        if (collision.CompareTag("Moedas") == true)
+        {
+            Controlador.acesso.totalMoedas = Controlador.acesso.totalMoedas + 1;
+            Controlador.acesso.AtualizarMoedas();
+
+            Destroy(collision.gameObject);
+        }
     }
 
 

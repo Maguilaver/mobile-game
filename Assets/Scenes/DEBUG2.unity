@@ -410,18 +410,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 701463962329665053, guid: 3b75de80d155f694fa5ffe07bd7bd6b4, type: 3}
   m_PrefabInstance: {fileID: 701463961599030177}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &522435557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522435556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83bee68ed5f0d6241a829074c885e4a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &522435562
 Animator:
   serializedVersion: 3
@@ -1685,7 +1673,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7febf82603d358843b0c5b450169a331, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.483
   m_Pitch: 1
   Loop: 1
   Mute: 0
