@@ -9,25 +9,21 @@ public class ContadorDeFalhas : MonoBehaviour
 
     //Pensar no slow update
 
-    private void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "ingredientes")
         {
             Controlador.acesso.totalFalhas = falhas++ + 1;
             Controlador.acesso.AtualizarFalhas();
-
             Destroy(GameObject.FindWithTag("ingredientes"));
+
+            //checagem
+            if (Controlador.acesso.totalFalhas == 9)
+            {
+                Controlador.acesso.Perder();
+            }
+
+           
         }
 
 

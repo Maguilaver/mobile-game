@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Controlador : MonoBehaviour
 {
 
-    //Atualizar pontuação
+    //Atualizar pontuação durante o jogo
     public Text textoPontos;
 
     public int totalPontos;
@@ -20,7 +21,19 @@ public class Controlador : MonoBehaviour
 
     public int totalFalhas;
 
+    //Painel perder
 
+    public GameObject painelPerder;
+
+    // Texto Pontuação final
+
+    public Text pontosFinais;
+
+    //Botão pause
+
+    public GameObject botaoPause;
+
+     
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +64,24 @@ public class Controlador : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Perder()
+    {
+        Time.timeScale = 0f;
 
+        painelPerder.SetActive(true);
+
+        //mostrar pontuação na tela de perder
+        pontosFinais.text = "Pontuação  " + totalPontos.ToString();
+
+        //desativar interfaces 
+        textoPontos.gameObject.SetActive(false);
+        textoFalhas.gameObject.SetActive(false);
+        botaoPause.SetActive(false);
+    }
+
+    public void TentarNovamente()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("DEBUG2");
+    }
 }

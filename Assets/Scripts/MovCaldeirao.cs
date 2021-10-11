@@ -20,14 +20,14 @@ public class MovCaldeirao : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // chamado  a cada frame do jogo, pode variar
     {
         dirX = Input.acceleration.x * velocidade;
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -1.5f, 1.5f), transform.position.y); //criar limites para a bola
         
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate()  //FixedUpdate é chamado em um intervalo fixo de jogo,tempo que a unity faz os calculos de fisica 
     {
         rbCaldeirao.velocity = new Vector2(dirX, 0f);
     }
@@ -36,12 +36,9 @@ public class MovCaldeirao : MonoBehaviour
     {
         if(collision.gameObject.tag == "Animais")
         {
-
+            Controlador.acesso.Perder();
         }
     }
-
-    
-
 
 
 }
