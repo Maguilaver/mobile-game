@@ -8,7 +8,7 @@ public class Moedas : MonoBehaviour
 
     void Start()
     {
-        Controlador.acesso.totalMoedas = 0;
+        Controlador.acesso.Moedas = 0;
         
     }
 
@@ -21,7 +21,8 @@ public class Moedas : MonoBehaviour
     {
         if(collision.CompareTag("Moedas") == true)
         {
-            Controlador.acesso.totalMoedas = Controlador.acesso.totalMoedas + 1;
+            Controlador.acesso.Moedas = Controlador.acesso.Moedas + 1;
+
             Controlador.acesso.AtualizarMoedas();
 
             Destroy(collision.gameObject);

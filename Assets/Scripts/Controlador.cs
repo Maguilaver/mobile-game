@@ -10,7 +10,9 @@ public class Controlador : MonoBehaviour
     //Atualizar moedas durante o jogo
     public Text textoMoedas;
 
-    public int totalMoedas;
+    public int Moedas;
+
+    public int TotalMoedas;
 
     //Atualizar pontuação durante o jogo
     public Text textoPontos;
@@ -39,6 +41,10 @@ public class Controlador : MonoBehaviour
 
     public GameObject botaoPause;
 
+    //Salvar o jogo
+
+    public bool save;
+
      
     // Start is called before the first frame update
     void Start()
@@ -46,12 +52,22 @@ public class Controlador : MonoBehaviour
 
         acesso = this; // criar uma variavel estatica e atribuir o valor dela ao proprio script
                        // assim, quando eu chamar essa variavel de outro script consigo acessar tudo dele que não seja private
+
+        Moedas = 0;
+
+        save = false; //save recebe falso, pois no inicio do jogo não queremos que salve.
+        //totalMoedas = PlayerPrefs.GetInt("totalScore");
       
+    }
+
+    private void Update()
+    {
+        //salvarMoedas();
     }
 
     public void AtualizarMoedas()
     {
-        textoMoedas.text = totalMoedas.ToString();
+        textoMoedas.text = Moedas.ToString();
     }
    public void AtualizarPontos()
     {
@@ -76,15 +92,23 @@ public class Controlador : MonoBehaviour
 
     public void Perder()
     {
+        save = true; //ao acabar o jogo, ele salvará as informações
+
         Time.timeScale = 0f;
 
         painelPerder.SetActive(true);
 
-        //mostrar pontuação na tela de perder
+        //mostrar pontuação na tela de perde
         pontosFinais.text = "Pontuação  " + totalPontos.ToString();
 
         //mostrar moedas na tela de perder
-        moedasFinais.text = "Moedas obtidas " + totalMoedas.ToString();
+
+        TotalMoedas = PlayerPrefs.GetInt("totalScore");
+        //usamos GetInt no PlayerPref para pegar valores salvos
+
+        TotalMoedas = TotalMoedas + Moedas;
+        moedasFinais.text = "Moedas obtidas " + TotalMoedas.ToString();
+        salvarMoedas();
 
         //desativar interfaces 
         textoPontos.gameObject.SetActive(false);
@@ -98,5 +122,15 @@ public class Controlador : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("DEBUG2");
+    }
+
+    private void salvarMoedas()
+    {
+        if (save == true)
+        {
+            PlayerPrefs.SetInt("totalScore", TotalMoedas);
+            //no PlayerPref, usa-se Setin para salvar informaçoes
+            PlayerPrefs.Save();
+        }
     }
 }
