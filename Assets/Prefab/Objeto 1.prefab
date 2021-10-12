@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1116732154555521492}
   - component: {fileID: 1116732154555521493}
   - component: {fileID: -6589855544858682821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Objeto 1
   m_TagString: ingredientes
   m_Icon: {fileID: 0}

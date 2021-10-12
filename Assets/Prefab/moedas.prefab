@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5402068425402379266}
   - component: {fileID: 5402068425402379517}
   - component: {fileID: 6740405846418178885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: moedas
   m_TagString: Moedas
   m_Icon: {fileID: 0}

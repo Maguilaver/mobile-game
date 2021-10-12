@@ -44,3 +44,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Objetos
+    uniqueID: 1274996585
+    locked: 0
