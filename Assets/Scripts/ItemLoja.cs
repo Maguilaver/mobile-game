@@ -17,10 +17,12 @@ public class ItemLoja : MonoBehaviour
 
 
 
+
     void Start()
 
     {
         acesso = this;
+
 
     }
 

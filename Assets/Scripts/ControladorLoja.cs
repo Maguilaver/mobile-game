@@ -5,57 +5,38 @@ using UnityEngine.UI;
 
 public class ControladorLoja : MonoBehaviour
 {
-    public Text textoMoeda;
-    public Text[] textobotao;
-    public int[] preço;
+    public Text moedaLoja;
+
     private int moedinhas;
+
+    public GameObject semDinheiro;
+
 
     void Start()
     {
-        //if(PlayerPrefs.GetInt("0") == 0)
-        {
-            //PlayerPrefs.SetInt("0", 1);
-        }
-        moedinhas = PlayerPrefs.GetInt("totalScore");
+        moedinhas = PlayerPrefs.GetInt("totalScore"); //relacionar variavel da loja com o save das moedas
+        
     }
     void Update()
     {
-        for(int i = 0; i < textobotao.Length; i++)
-        {
-            if(PlayerPrefs.GetInt(i.ToString()) == 0)
-            {
-                textobotao[i].text = preço[i].ToString();
-            }
-            else
-            {
-                textobotao[i].text = "Selecionar";
-            }
-        }
-
-        textoMoeda.text = PlayerPrefs.GetInt("totalScore").ToString();
-        
+        moedaLoja.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
-
-    public void ComprarItem(int numeroBotao)
+    public void Comprar()
     {
-        //caso PlayerPref = 0 então item esta bloqueado
-        if (PlayerPrefs.GetInt(numeroBotao.ToString()) == 0)
+        if (moedinhas >= ItemLoja.acesso.preço)
         {
-            //codigo para comprar item e desbloquear
-            if(moedinhas >= preço[numeroBotao])
-            {
-                PlayerPrefs.SetInt(numeroBotao.ToString(), 1);
-                PlayerPrefs.Save();
+            moedinhas = moedinhas - ItemLoja.acesso.preço;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
 
-                moedinhas = moedinhas - preço[numeroBotao];
-                PlayerPrefs.SetInt("totalScore", moedinhas);
-                PlayerPrefs.Save();
-            }
+            ItemLoja.acesso.item.SetActive(true);
+
         }
         else
         {
-            print("desbloqueado");
-            //"seleciona o personagem"
+            semDinheiro.SetActive(true);
         }
+
     }
+
 }
