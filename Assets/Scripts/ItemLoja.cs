@@ -15,6 +15,9 @@ public class ItemLoja : MonoBehaviour
 
     public GameObject item;
 
+    //salvar 
+   // public int Comprado;
+
 
 
 
@@ -23,12 +26,6 @@ public class ItemLoja : MonoBehaviour
     {
         acesso = this;
 
-
-    }
-
-
-    void Update()
-    {
 
     }
 
