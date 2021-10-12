@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Casa da bruxa.unity
     guid: 6aa8d71fcef74294cbf9af6fa68e5035
+  - enabled: 1
+    path: Assets/Scenes/DEBUG.unity
+    guid: deecbceb2b6f5194ea6a735d88b95621
   m_configObjects: {}

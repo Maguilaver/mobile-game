@@ -55,8 +55,16 @@ public class Controlador : MonoBehaviour
 
     public GameObject semDinheiro;
 
+    //musicas e efeitos sonoros
 
+    //perder
+    public AudioSource Sons;
+    public AudioClip somPerder;
 
+    //musica gameplay minigame
+
+    public AudioSource musicaGameplay;
+   
      
     // Start is called before the first frame update
     void Start()
@@ -65,17 +73,18 @@ public class Controlador : MonoBehaviour
         acesso = this; // criar uma variavel estatica e atribuir o valor dela ao proprio script
                        // assim, quando eu chamar essa variavel de outro script consigo acessar tudo dele que não seja private
 
-        Moedas = 1000;
+        Moedas = 0;
 
         save = false; //save recebe falso, pois no inicio do jogo não queremos que salve.
 
         moedinhas = PlayerPrefs.GetInt("totalScore"); //relacionar variavel da loja com o save das moedas
-      
+
+        moedaLoja.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
 
     private void Update()
     {
-        moedaLoja.text = PlayerPrefs.GetInt("totalScore").ToString();
+       
     }
 
 
@@ -112,6 +121,11 @@ public class Controlador : MonoBehaviour
 
         painelPerder.SetActive(true);
 
+        //sons e musica
+        Sons.PlayOneShot(somPerder);
+
+        musicaGameplay.Pause();
+
         //mostrar pontuação na tela de perde
         pontosFinais.text = "Pontuação  " + totalPontos.ToString();
 
@@ -135,6 +149,7 @@ public class Controlador : MonoBehaviour
         textoFalhas.gameObject.SetActive(false);
         botaoPause.SetActive(false);
         textoMoedas.gameObject.SetActive(false);
+
 
     }
 

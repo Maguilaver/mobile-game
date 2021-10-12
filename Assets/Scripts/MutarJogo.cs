@@ -7,8 +7,6 @@ public class MutarJogo : MonoBehaviour
 {
     private bool estaMutado;
 
-    [SerializeField]
-    GameObject efeitosSonoros;
     // Start is called before the first frame update
     void Start()
     {
