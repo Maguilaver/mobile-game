@@ -169,8 +169,10 @@ public class Controlador : MonoBehaviour
         }
     }
 
-    public void DeleteAll()
+
+    public static void DeleteAll()
     {
+
         PlayerPrefs.DeleteAll();
 
     }
