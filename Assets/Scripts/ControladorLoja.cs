@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ControladorLoja : MonoBehaviour
 {
+    public Text textoMoeda;
     public Text[] textobotao;
     public int[] preço;
     private int moedinhas;
@@ -30,6 +31,8 @@ public class ControladorLoja : MonoBehaviour
                 textobotao[i].text = "Selecionar";
             }
         }
+
+        textoMoeda.text = PlayerPrefs.GetInt("totalScore").ToString();
         
     }
 

@@ -452,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 332.4, y: -166.70001}
+  m_AnchoredPosition: {x: 332.4, y: -166.69995}
   m_SizeDelta: {x: 576.1, y: 250.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562927633
@@ -533,7 +533,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -218, y: 262}
+  m_AnchoredPosition: {x: 143.4, y: 270}
   m_SizeDelta: {x: 154.1, y: 174.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747213691
@@ -821,6 +821,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1222939746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222939748}
+  - component: {fileID: 1222939747}
+  m_Layer: 0
+  m_Name: Controlador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1222939747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222939746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bc55d46ec0f5a4b978c29f77842dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoMoedas: {fileID: 0}
+  Moedas: 0
+  TotalMoedas: 0
+  textoMoedasTotais: {fileID: 0}
+  textoPontos: {fileID: 0}
+  totalPontos: 0
+  textoFalhas: {fileID: 0}
+  totalFalhas: 0
+  painelPerder: {fileID: 0}
+  pontosFinais: {fileID: 0}
+  moedasFinais: {fileID: 0}
+  botaoPause: {fileID: 0}
+  save: 0
+  moedaLoja: {fileID: 562927633}
+  semDinheiro: {fileID: 792388151}
+--- !u!4 &1222939748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222939746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5355431, y: 2.3426278, z: 71.62007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329066154
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,11 +983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234debfe96317034e88580aac6c84d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinheiroTotal: {fileID: 562927633}
-  MoedasTotais: 0
-  valorItem: 0
+  "pre\xE7o": 0
   item: {fileID: 747213689}
-  semDinheiro: {fileID: 792388151}
 --- !u!4 &1961203064
 Transform:
   m_ObjectHideFlags: 0
@@ -1186,8 +1241,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104254813}
-        m_TargetAssemblyTypeName: LojaTeste, Assembly-CSharp
+      - m_Target: {fileID: 1222939747}
+        m_TargetAssemblyTypeName: Controlador, Assembly-CSharp
         m_MethodName: Comprar
         m_Mode: 1
         m_Arguments:
@@ -1248,8 +1303,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234debfe96317034e88580aac6c84d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dinheiroTotal: {fileID: 562927633}
-  MoedasTotais: 200
-  valorItem: 10
+  "pre\xE7o": 100
   item: {fileID: 747213689}
-  semDinheiro: {fileID: 792388151}

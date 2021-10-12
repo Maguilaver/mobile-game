@@ -47,7 +47,15 @@ public class Controlador : MonoBehaviour
 
     public bool save;
 
-    //
+    //Variaveis para a loja
+
+    public Text moedaLoja;
+
+    private int moedinhas;
+
+    public GameObject semDinheiro;
+
+
 
      
     // Start is called before the first frame update
@@ -57,17 +65,19 @@ public class Controlador : MonoBehaviour
         acesso = this; // criar uma variavel estatica e atribuir o valor dela ao proprio script
                        // assim, quando eu chamar essa variavel de outro script consigo acessar tudo dele que não seja private
 
-        Moedas = 0;
+        Moedas = 1000;
 
         save = false; //save recebe falso, pois no inicio do jogo não queremos que salve.
-        //totalMoedas = PlayerPrefs.GetInt("totalScore");
+
+        moedinhas = PlayerPrefs.GetInt("totalScore"); //relacionar variavel da loja com o save das moedas
       
     }
 
     private void Update()
     {
-        //salvarMoedas();
+        moedaLoja.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
+
 
     public void AtualizarMoedas()
     {
@@ -142,5 +152,29 @@ public class Controlador : MonoBehaviour
             //no PlayerPref, usa-se Setin para salvar informaçoes
             PlayerPrefs.Save();
         }
+    }
+
+    public void DeleteAll()
+    {
+        PlayerPrefs.DeleteAll();
+
+    }
+
+    public void Comprar()
+    {
+        if(moedinhas >= ItemLoja.acesso.preço)
+        {
+            moedinhas = moedinhas - ItemLoja.acesso.preço;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
+
+            ItemLoja.acesso.item.SetActive(true);
+
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
+
     }
 }
