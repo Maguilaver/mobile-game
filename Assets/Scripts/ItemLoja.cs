@@ -26,15 +26,17 @@ public class ItemLoja : MonoBehaviour
 
     //itens
     public GameObject Cama;
-    public GameObject Quadro;
+   // public GameObject Quadro;
     public GameObject Planta;
     public GameObject Prate;
+    public GameObject Sofa;
 
     //botões
     public GameObject botCama;
     public GameObject botQuadro;
     public GameObject botPlanta;
     public GameObject botPrate;
+    public GameObject botSofa;
 
     //salvar 
     // public int Comprado;
@@ -48,7 +50,7 @@ public class ItemLoja : MonoBehaviour
         acesso = this;
 
         cama = PlayerPrefs.GetInt("cama", 1);
-        quadro = PlayerPrefs.GetInt("quadro", 1);
+     //   quadro = PlayerPrefs.GetInt("quadro", 1);
         planta = PlayerPrefs.GetInt("planta", 1);
         sofa = PlayerPrefs.GetInt("sofa", 1);
         prate = PlayerPrefs.GetInt("prate", 1);
@@ -69,7 +71,7 @@ public class ItemLoja : MonoBehaviour
             botCama.SetActive(false);
         }
 
-        if (quadro == 1)
+       /* if (quadro == 1)
         {
             Quadro.SetActive(false);
         }
@@ -80,6 +82,7 @@ public class ItemLoja : MonoBehaviour
             botQuadro.SetActive(false);
 
         }
+       */
 
         if (planta == 1)
         {
@@ -104,6 +107,19 @@ public class ItemLoja : MonoBehaviour
         {
             Prate.SetActive(true);
             botPrate.SetActive(false);
+
+        }
+
+        if (sofa == 1)
+        {
+            Sofa.SetActive(false);
+
+        }
+
+        if (sofa == 2)
+        {
+            Sofa.SetActive(true);
+            botSofa.SetActive(false);
 
         }
     }

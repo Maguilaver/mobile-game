@@ -27,7 +27,7 @@ public class ControladorLoja : MonoBehaviour
         if (moedinhas >= 50)
         {
             ItemLoja.cama = 2;
-            PlayerPrefs.SetInt("cama", testeitem.quadrado);
+            PlayerPrefs.SetInt("cama", ItemLoja.cama);
             PlayerPrefs.Save();
             moedinhas = moedinhas - 50;
             PlayerPrefs.SetInt("totalScore", moedinhas);
@@ -41,12 +41,12 @@ public class ControladorLoja : MonoBehaviour
 
     }
 
-    public void ComprarQuadro()
+   /* public void ComprarQuadro()
     {
         if (moedinhas >= 250)
         {
             ItemLoja.quadro = 2;
-            PlayerPrefs.SetInt("quadro", testeitem.quadrado);
+            PlayerPrefs.SetInt("quadro", ItemLoja.quadro);
             PlayerPrefs.Save();
             moedinhas = moedinhas - 250;
             PlayerPrefs.SetInt("totalScore", moedinhas);
@@ -59,13 +59,14 @@ public class ControladorLoja : MonoBehaviour
         }
 
     }
+   */
 
     public void ComprarPlanta()
     {
         if (moedinhas >= 85)
         {
             ItemLoja.planta = 2;
-            PlayerPrefs.SetInt("planta", testeitem.quadrado);
+            PlayerPrefs.SetInt("planta", ItemLoja.planta);
             PlayerPrefs.Save();
             moedinhas = moedinhas - 85;
             PlayerPrefs.SetInt("totalScore", moedinhas);
@@ -84,7 +85,7 @@ public class ControladorLoja : MonoBehaviour
         if (moedinhas >= 100)
         {
             ItemLoja.sofa = 2;
-            PlayerPrefs.SetInt("sofa", testeitem.quadrado);
+            PlayerPrefs.SetInt("sofa", ItemLoja.sofa);
             PlayerPrefs.Save();
             moedinhas = moedinhas - 100;
             PlayerPrefs.SetInt("totalScore", moedinhas);
@@ -103,7 +104,7 @@ public class ControladorLoja : MonoBehaviour
         if (moedinhas >= 150)
         {
             ItemLoja.prate = 2;
-            PlayerPrefs.SetInt("prate", testeitem.quadrado);
+            PlayerPrefs.SetInt("prate", ItemLoja.prate);
             PlayerPrefs.Save();
             moedinhas = moedinhas - 150;
             PlayerPrefs.SetInt("totalScore", moedinhas);

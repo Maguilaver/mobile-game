@@ -1594,13 +1594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2123f3f042611409b88f939f5b1c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoMoeda: {fileID: 451555527}
-  textobotao:
-  - {fileID: 990836081}
-  - {fileID: 642984532}
-  - {fileID: 701549841}
-  - {fileID: 99429096}
-  "pre\xE7o": 0a000000140000001e0000000f000000
+  moedaLoja: {fileID: 0}
+  semDinheiro: {fileID: 0}
 --- !u!4 &1929488645
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,7 +1779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: 1211}
+  m_AnchoredPosition: {x: 129, y: 1063}
   m_SizeDelta: {x: 425.1, y: 62.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984330566
@@ -2064,6 +2059,9 @@ MonoBehaviour:
   moedasFinais: {fileID: 0}
   botaoPause: {fileID: 0}
   save: 0
+  Sons: {fileID: 0}
+  somPerder: {fileID: 0}
+  musicaGameplay: {fileID: 0}
 --- !u!4 &2096541752
 Transform:
   m_ObjectHideFlags: 0
