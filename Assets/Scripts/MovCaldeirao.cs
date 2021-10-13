@@ -24,6 +24,12 @@ public class MovCaldeirao : MonoBehaviour
     [SerializeField]
      AudioClip SomMoeda;
 
+    [SerializeField]
+    AudioClip SomIngrediente;
+
+    [SerializeField]
+    AudioClip SomAnimais;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +56,7 @@ public class MovCaldeirao : MonoBehaviour
         if(collision.gameObject.tag == "Animais")
         {
             Controlador.acesso.Perder();
+            sonsCol.PlayOneShot(SomAnimais);
 
         }
 
@@ -67,6 +74,7 @@ public class MovCaldeirao : MonoBehaviour
         if(collision.gameObject.tag == "ingredientes")
         {
             anima.SetTrigger("Ativar");
+            sonsCol.PlayOneShot(SomIngrediente);
         }
 
         
