@@ -62,6 +62,7 @@ public class Controlador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Time.timeScale = 0f;
 
         acesso = this; // criar uma variavel estatica e atribuir o valor dela ao proprio script
                        // assim, quando eu chamar essa variavel de outro script consigo acessar tudo dele que não seja private

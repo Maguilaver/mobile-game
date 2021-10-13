@@ -24,12 +24,12 @@ public class ControladorLoja : MonoBehaviour
     }
     public void ComprarCama()
     {
-        if (moedinhas >= 50)
+        if (moedinhas >= 15)
         {
             ItemLoja.cama = 2;
             PlayerPrefs.SetInt("cama", ItemLoja.cama);
             PlayerPrefs.Save();
-            moedinhas = moedinhas - 50;
+            moedinhas = moedinhas - 15;
             PlayerPrefs.SetInt("totalScore", moedinhas);
             PlayerPrefs.Save();
 
@@ -41,51 +41,12 @@ public class ControladorLoja : MonoBehaviour
 
     }
 
-   /* public void ComprarQuadro()
-    {
-        if (moedinhas >= 250)
-        {
-            ItemLoja.quadro = 2;
-            PlayerPrefs.SetInt("quadro", ItemLoja.quadro);
-            PlayerPrefs.Save();
-            moedinhas = moedinhas - 250;
-            PlayerPrefs.SetInt("totalScore", moedinhas);
-            PlayerPrefs.Save();
-
-        }
-        else
-        {
-            semDinheiro.SetActive(true);
-        }
-
-    }
-   */
-
-    public void ComprarPlanta()
-    {
-        if (moedinhas >= 85)
-        {
-            ItemLoja.planta = 2;
-            PlayerPrefs.SetInt("planta", ItemLoja.planta);
-            PlayerPrefs.Save();
-            moedinhas = moedinhas - 85;
-            PlayerPrefs.SetInt("totalScore", moedinhas);
-            PlayerPrefs.Save();
-
-        }
-        else
-        {
-            semDinheiro.SetActive(true);
-        }
-
-    }
-
-    public void ComprarSofa()
+    public void ComprarQuadro()
     {
         if (moedinhas >= 100)
         {
-            ItemLoja.sofa = 2;
-            PlayerPrefs.SetInt("sofa", ItemLoja.sofa);
+            ItemLoja.quadro = 2;
+            PlayerPrefs.SetInt("quadro", ItemLoja.quadro);
             PlayerPrefs.Save();
             moedinhas = moedinhas - 100;
             PlayerPrefs.SetInt("totalScore", moedinhas);
@@ -99,14 +60,53 @@ public class ControladorLoja : MonoBehaviour
 
     }
 
+
+    public void ComprarPlanta()
+    {
+        if (moedinhas >= 20)
+        {
+            ItemLoja.planta = 2;
+            PlayerPrefs.SetInt("planta", ItemLoja.planta);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 20;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
+
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
+
+    }
+
+    public void ComprarSofa()
+    {
+        if (moedinhas >= 50)
+        {
+            ItemLoja.sofa = 2;
+            PlayerPrefs.SetInt("sofa", ItemLoja.sofa);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 50;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
+
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
+
+    }
+
     public void ComprarPrate()
     {
-        if (moedinhas >= 150)
+        if (moedinhas >= 75)
         {
             ItemLoja.prate = 2;
             PlayerPrefs.SetInt("prate", ItemLoja.prate);
             PlayerPrefs.Save();
-            moedinhas = moedinhas - 150;
+            moedinhas = moedinhas - 75;
             PlayerPrefs.SetInt("totalScore", moedinhas);
             PlayerPrefs.Save();
 
