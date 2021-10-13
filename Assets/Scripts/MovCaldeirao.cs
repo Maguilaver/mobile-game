@@ -11,12 +11,25 @@ public class MovCaldeirao : MonoBehaviour
     [SerializeField]
     private float velocidade;
 
+    //animação
+
+   
+     Animator anima;
+
+    //efeitos sonoros
+
+    [SerializeField]
+     AudioSource sonsCol;
+
+    [SerializeField]
+     AudioClip SomMoeda;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rbCaldeirao = GetComponent<Rigidbody2D>();
+        anima = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,16 +50,26 @@ public class MovCaldeirao : MonoBehaviour
         if(collision.gameObject.tag == "Animais")
         {
             Controlador.acesso.Perder();
+
         }
 
         if (collision.CompareTag("Moedas") == true)
         {
+            anima.SetTrigger("Ativar");
+            sonsCol.PlayOneShot(SomMoeda);
             Controlador.acesso.Moedas = Controlador.acesso.Moedas + 1;
             Controlador.acesso.AtualizarMoedas();
 
             Destroy(collision.gameObject);
 
         }
+
+        if(collision.gameObject.tag == "ingredientes")
+        {
+            anima.SetTrigger("Ativar");
+        }
+
+        
     }
 
 
