@@ -22,17 +22,92 @@ public class ControladorLoja : MonoBehaviour
     {
         moedaLoja.text = PlayerPrefs.GetInt("totalScore").ToString();
     }
-    public void Comprar()
+    public void ComprarCama()
     {
-        if (moedinhas >= ItemLoja.acesso.preço)
+        if (moedinhas >= 50)
         {
-            moedinhas = moedinhas - ItemLoja.acesso.preço;
+            ItemLoja.cama = 2;
+            PlayerPrefs.SetInt("cama", testeitem.quadrado);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 50;
             PlayerPrefs.SetInt("totalScore", moedinhas);
             PlayerPrefs.Save();
 
-            ItemLoja.acesso.item.SetActive(true);
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
 
+    }
 
+    public void ComprarQuadro()
+    {
+        if (moedinhas >= 250)
+        {
+            ItemLoja.quadro = 2;
+            PlayerPrefs.SetInt("quadro", testeitem.quadrado);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 250;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
+
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
+
+    }
+
+    public void ComprarPlanta()
+    {
+        if (moedinhas >= 85)
+        {
+            ItemLoja.planta = 2;
+            PlayerPrefs.SetInt("planta", testeitem.quadrado);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 85;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
+
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
+
+    }
+
+    public void ComprarSofa()
+    {
+        if (moedinhas >= 100)
+        {
+            ItemLoja.sofa = 2;
+            PlayerPrefs.SetInt("sofa", testeitem.quadrado);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 100;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
+
+        }
+        else
+        {
+            semDinheiro.SetActive(true);
+        }
+
+    }
+
+    public void ComprarPrate()
+    {
+        if (moedinhas >= 150)
+        {
+            ItemLoja.prate = 2;
+            PlayerPrefs.SetInt("prate", testeitem.quadrado);
+            PlayerPrefs.Save();
+            moedinhas = moedinhas - 150;
+            PlayerPrefs.SetInt("totalScore", moedinhas);
+            PlayerPrefs.Save();
 
         }
         else

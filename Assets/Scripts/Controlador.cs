@@ -66,7 +66,7 @@ public class Controlador : MonoBehaviour
         acesso = this; // criar uma variavel estatica e atribuir o valor dela ao proprio script
                        // assim, quando eu chamar essa variavel de outro script consigo acessar tudo dele que não seja private
 
-        Moedas = 1000;
+        Moedas = 0;
 
         save = false; //save recebe falso, pois no inicio do jogo não queremos que salve.
     }
